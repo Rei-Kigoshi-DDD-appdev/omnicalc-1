@@ -28,6 +28,18 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/random_results.html.erb" })
   end
 
+  #Square Root
+  def blank_root_form
+    render({ :template => "calculation_templates/root_form.html.erb" })
+  end
+
+  def calculate_root
+
+    #Parameters: {"burdock"=>"121"}
+    @root_num = params.fetch("burdock").to_f
+    @square_root_of_num = @root_num ** 0.5
+    render({ :template => "calculation_templates/root_results.html.erb" })
+  end
 
 
 
